@@ -1,0 +1,417 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;800;1000&display=swap");
+* {
+  font-family: "Cairo";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+:root {
+  --green: rgb(20, 238, 128);
+  --gray: rgb(51, 51, 51);
+  --white: rgb(255, 255, 255);
+  --blue: rgb(0, 0, 255);
+  --transition: all 0.3s ease-in-out;
+}
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Header Styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+}
+.header.active {
+  background-color: var(--white);
+  box-shadow: 0 12px 34px -11px rgb(65, 62, 101, 0.1);
+  padding-bottom: 5px;
+}
+.header .language {
+  display: flex;
+  gap: 10px;
+}
+.header .language a {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  overflow: hidden;
+}
+.header .language img {
+  width: 100%;
+  height: 100%;
+  /* background-size: cover; */
+}
+/* Home Styling */
+/* Hero Section Styling */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+.hero .container {
+  background-image: url("https://elwhats.com/image/l4/hero-bg.svg");
+  background-position: center right;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0;
+  z-index: -5;
+  background-size: cover;
+}
+.hero .home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 4% 10% 5% 10%;
+}
+.hero .home .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  text-align: left;
+  padding-top: 12%;
+  width: 500px;
+}
+.hero .home .content span {
+  font-size: 65px;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+  line-height: 90px;
+}
+.hero .home .content p {
+  font-size: 20px;
+  color: rgb(34, 47, 63);
+}
+.hero .home .content .btn {
+  display: inline-block;
+  font-size: 18px;
+  background: var(--gray);
+  text-align: center;
+  color: var(--white);
+  padding: 12px 10px;
+  border-radius: 3px;
+  width: 200px;
+}
+.hero .home .img-box {
+  width: 400px;
+}
+/* Send section Styling */
+.send {
+  padding: 10% 12%;
+}
+.send .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 50px;
+}
+.send .container .img-box {
+  width: 400px;
+  overflow: hidden;
+}
+.send .container .img-box img {
+  width: 100%;
+}
+.send .container .content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+.send .container .content span {
+  font-size: 58px;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+  line-height: 90px;
+}
+.send .container .content p {
+  font-size: 20px;
+  color: var(--gray);
+  opacity: 0.7;
+}
+.send .container .content p img {
+  margin-bottom: -7px;
+}
+.send .container .content .btn {
+  color: rgb(12, 57, 248);
+  font-size: 18px;
+}
+.send .container .content .btn i {
+  margin-left: 20px;
+}
+
+/* Pricing Section Styling */
+.pricing .container {
+  text-align: center;
+}
+.pricing .container h1 {
+  color: var(--gray);
+  font-size: 55px;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+.pricing .container p {
+  font-size: 20px;
+  color: var(--gray);
+  padding-bottom: 30px;
+  opacity: 0.7;
+}
+.pricing .container .box-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.pricing .container .box-container .box {
+  background: var(--white);
+  border: 1px solid rgb(222, 226, 230);
+}
+
+.pricing .container .box-container .box:nth-child(2) {
+  border-top: 3px solid var(--green);
+}
+
+.pricing .container .box-container .box:nth-child(2) .btn {
+  background: var(--green);
+  color: var(--gray);
+}
+
+.pricing .container .box-container .box:nth-child(2) .btn:hover {
+  color: var(--white);
+}
+
+.pricing .container .box-container .box h3 {
+  font-size: 13px;
+  padding: 17px 0;
+  font-weight: 500;
+  color: #444;
+}
+
+.pricing .container .box-container .box .price {
+  color: rgba(0, 0, 0);
+  font-size: 57px;
+}
+.pricing .container .box-container .box .price .title {
+  font-size: 15px;
+  text-transform: uppercase;
+  position: relative;
+}
+.pricing .container .box-container .box .price .title::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray);
+  opacity: 0.2;
+  top: 100%;
+  left: 0;
+}
+.pricing .container .box-container .box .price .nd::after {
+  top: 97%;
+}
+.pricing .container .box-container .box .price.year {
+  display: none;
+}
+
+.pricing .container .box-container .box .list {
+  margin: 20px 0;
+}
+
+.pricing .container .box-container .box .list p {
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(31, 31, 31);
+  font-style: normal;
+}
+
+.pricing .container .box-container .box .list .del {
+  text-decoration: line-through;
+}
+.pricing .container .box-container .box .btn {
+  margin: 20px;
+  display: inline-block;
+  font-size: 18px;
+  background: var(--gray);
+  color: var(--white);
+  padding: 8px 65px;
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.pricing .container .price-toggler {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid rgba(222, 226, 230, 0.6);
+  background: #fff;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+
+.pricing .container .price-toggler span {
+  padding: 4px 25px;
+  cursor: pointer;
+  color: var(--gray);
+  font-size: 13px;
+  display: inline-block;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+.pricing .container .price-toggler span.active {
+  background: var(--blue);
+  border-radius: 40px;
+  color: #fff;
+}
+.pricing .container .more {
+  text-align: left;
+  padding-left: 10%;
+  /* margin-left: 160px; */
+  font-size: 15px;
+  opacity: 1;
+}
+.pricing .container .more a {
+  color: rgb(13, 110, 253);
+}
+.pricing .container .more a:hover {
+  color: rgb(10, 88, 202);
+}
+/* Footer Section Styling */
+.footer {
+  background-color: rgb(221, 247, 234);
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.footer .container .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 25px;
+}
+.footer .container .contact a {
+  color: rgb(13, 110, 253);
+}
+.footer .container .contact a:hover {
+  color: rgb(10, 88, 202);
+}
+@media (max-width: 1060px) {
+  .send .container {
+    justify-content: center;
+  }
+}
+@media (max-width: 991px) {
+  .send .container {
+    justify-content: center;
+  }
+  .hero .home {
+    justify-content: center;
+    gap: 50px;
+  }
+  .hero .home .img-box {
+    width: 400px;
+  }
+  .hero .home .content span {
+    margin-top: 100px;
+    font-size: 50px;
+    line-height: 66px;
+  }
+  .send .container {
+    justify-content: center;
+  }
+  .send .container .img-box {
+    width: 100%;
+  }
+  .send .container .content {
+    align-items: center;
+  }
+  .send .container .content span {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .hero .home {
+    justify-content: center;
+  }
+  .hero .home .content span {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .hero .home .img-box {
+    width: 100%;
+  }
+
+  .send .container .content span {
+    font-size: 30px;
+    line-height: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .send .container .content span {
+    width: 100%;
+    text-align: center;
+  }
+  .send .container .content p {
+    width: 100%;
+    text-align: center;
+  }
+  .hero .home .img-box {
+    display: none;
+  }
+  .footer {
+    padding: 10% 0;
+
+  }
+}
+@media (max-width: 450px) {
+  .pricing .container .box-container {
+    grid-template-columns: 1fr;
+  }
+  .hero .home .content span {
+    font-size: 30px;
+    line-height: 40px;
+    margin-left: -10px;
+  }
+  .hero .home .content p {
+    font-size: 18px;
+    margin-left: -15px;
+  }
+  .pricing .container .box-container .box .btn {
+    margin: 20px;
+    display: inline-block;
+    font-size: 18px;
+    background: var(--gray);
+    color: var(--white);
+    padding: 8px 45px;
+    border-radius: 3px;
+  }
+}
